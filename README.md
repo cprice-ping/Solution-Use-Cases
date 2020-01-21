@@ -15,7 +15,7 @@ These use cases can be deployed in several ways:
 API collections that modify Server Profiles to do other things
 
 ## PingFederate Base Configuration
-Server Profile: [PF-Base](cprice-ping/PF-Base)
+Server Profile: [PF-Base](https://github.com/cprice-ping/Profile-PF-Base)
 
 This API collection takes the vanilla PF Configuration and wires up Applications and Authentication Experiences that can be used to quickly demonstrate PF capabilities.
 
