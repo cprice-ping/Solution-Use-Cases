@@ -19,7 +19,7 @@ Server Profile: [PF-Base](https://github.com/cprice-ping/Profile-PF-Base)
 
 This API collection takes the vanilla PF Configuration and wires up Applications and Authentication Experiences that can be used to quickly demonstrate PF capabilities.
 
-[Documentation](https://www.getpostman.com/collections/2e0df14dcf26f1ddb39a)
+[Documentation](https://documenter.getpostman.com/view/1239082/SWLh4RQB)
 
 ### Deployment
 [Sample Environment File](pf_base_env_sample.json)
