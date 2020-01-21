@@ -1,0 +1,49 @@
+{
+	"id": "40199d03-d15c-47e4-b502-8b62f98479d1",
+	"name": "postman_vars",
+	"values": [
+		{
+			"key": "pfAdminURL",
+			"value": "https://ext-docker.cpricelab.com:9999",
+			"enabled": true
+		},
+		{
+			"key": "pfBaseURL",
+			"value": "https://ext-docker.cpricelab.com:9031",
+			"enabled": true
+		},
+		{
+			"key": "pingIdSdk",
+			"value": "#Auto-Generated from PingOne, downloaded by id=[000000] email=[bogus@anywhere.com]\n#Thu Jan 09 11:17:59 MST 2020\napi_key=ThisIsNotAnAPIKey\ntoken=ThisIsNotAToken\npingidsdk_url=https://sdk.pingid.com/pingid\naccount_id=ThisIsInYourPropertiesFile",
+			"enabled": true
+		},
+		{
+			"key": "userBaseDN",
+			"value": "dc=example.com",
+			"enabled": true
+		},
+		{
+			"key": "oauthSecret",
+			"value": "2FederateM0re",
+			"enabled": true
+		},
+		{
+			"key": "pfAdmin",
+			"value": "administrator",
+			"enabled": true
+		},
+		{
+			"key": "pfAdminPwd",
+			"value": "2FederateM0re",
+			"enabled": true
+		},
+		{
+			"key": "sdkAppId",
+			"value": "00000000-0000-0000-0000-000000000000",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2020-01-21T19:16:23.659Z",
+	"_postman_exported_using": "Postman/7.16.0"
+}

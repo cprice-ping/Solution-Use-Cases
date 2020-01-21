@@ -8,7 +8,7 @@ This repo provides Postman collections that can be applied to Server Profile sta
 These use cases can be deployed in several ways:
 * Postman --> Manual or Collection Runner
 * Docker --> `docker run postman/newman ...`
-* Compose / K8s --> Service definition
+* Compose \ K8s --> Service definition
 
 ---
 # Use Cases
@@ -39,6 +39,36 @@ This API collection takes the vanilla PF Configuration and wires up Applications
 pf-config-base:
     image: postman/newman
     command: run https://www.getpostman.com/collections/2e0df14dcf26f1ddb39a -e postman_vars.json --insecure --ignore-redirects
+    volumes:
+        # An environment file should be injected into the image - this file should contain your specfic info and secrets
+        - ./postman_vars.json:/etc/newman/postman_vars.json
+```
+---
+## PingFederate CIAM Configuration
+Server Profile: [PF-CIAM](https://github.com/cprice-ping/Profile-PF-CIAM)
+
+This API collection takes the PF-Base Configuration and replaces the PingID Adapter \ MFA with PingID SDK, and adds CIBA to the OIDC AS.
+
+[Documentation](https://documenter.getpostman.com/view/1239082/SWLk4kLF)
+
+### Deployment
+[Sample Environment File](pf_ciam_env_sample.json)
+
+**Postman Collection**  
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/b17a3494b4f4d54de628)
+
+**Postman Newman**  
+`newman run https://www.getpostman.com/collections/b17a3494b4f4d54de628 -e postman_vars.json --insecure --nofollow-redirects`
+
+**Newman - Docker**  
+`docker run postman/newman run https://www.getpostman.com/collections/b17a3494b4f4d54de628 -e postman_vars.json --insecure --nofollow-redirects -v ./postman_vars.json:/etc/newman/postman_vars.json`
+
+**YAML**
+```
+pf-config-base:
+    image: postman/newman
+    command: run https://www.getpostman.com/collections/b17a3494b4f4d54de628 -e postman_vars.json --insecure --ignore-redirects
     volumes:
         # An environment file should be injected into the image - this file should contain your specfic info and secrets
         - ./postman_vars.json:/etc/newman/postman_vars.json
