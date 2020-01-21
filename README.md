@@ -18,7 +18,9 @@ Often theres a need to have certificates that are signed by a public CA. Things 
 
 PingAccess v6 included a feature to generate KeyPairs and have them managed with the ACME protocol and the Let's Encrypt service. This capability makes PA a nice way to include a proxy to a configuration to enable trusted certificates in front of other services.
 
-* [Documentation](https://documenter.getpostman.com/view/1239082/SWT5jLpF)
-* [Collection](https://www.getpostman.com/collections/eaa397bd3a35ef3095c1)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/eaa397bd3a35ef3095c1)  
+[Documentation](https://documenter.getpostman.com/view/1239082/SWT5jLpF)
+
+
 
 ### Deployment
