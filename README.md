@@ -13,7 +13,40 @@ These use cases can be deployed in several ways:
 ---
 # Use Cases
 API collections that modify Server Profiles to do other things
+
+## PingFederate Base Configuration
+Server Profile: [PF-Base](cprice-ping/PF-Base)
+
+This API collection takes the vanilla PF Configuration and wires up Applications and Authentication Experiences that can be used to quickly demonstrate PF capabilities.
+
+[Documentation](https://www.getpostman.com/collections/2e0df14dcf26f1ddb39a)
+
+### Deployment
+[Sample Environment File](pf_base_env_sample.json)
+
+**Postman Collection**  
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/2e0df14dcf26f1ddb39a)
+
+**Postman Newman**  
+`newman run https://www.getpostman.com/collections/2e0df14dcf26f1ddb39a -e postman_vars.json --insecure --nofollow-redirects`
+
+**Newman - Docker**  
+`docker run postman/newman run https://www.getpostman.com/collections/2e0df14dcf26f1ddb39a -e postman_vars.json --insecure --nofollow-redirects -v ./postman_vars.json:/etc/newman/postman_vars.json`
+
+**YAML**
+```
+pf-config-base:
+    image: postman/newman
+    command: run https://www.getpostman.com/collections/2e0df14dcf26f1ddb39a -e postman_vars.json --insecure --ignore-redirects
+    volumes:
+        # An environment file should be injected into the image - this file should contain your specfic info and secrets
+        - ./postman_vars.json:/etc/newman/postman_vars.json
+```
+---
 ## PA with ACME-Managed cert for PF / PD
+Server Profile: N/A
+
 Often theres a need to have certificates that are signed by a public CA. Things like Delegator or PingCentral use the OIDC Issuer for both backchannel calls (Metadata and token validation) and frontchannel (Application rendering and API calls). Not all products allow insecure TLS connections.   
 
 PingAccess v6 included a feature to generate KeyPairs and have them managed with the ACME protocol and the Let's Encrypt service. This capability makes PA a nice way to include a proxy to a configuration to enable trusted certificates in front of other services.
@@ -37,9 +70,9 @@ PingAccess v6 included a feature to generate KeyPairs and have them managed with
 ```
 pa-config-proxy:
     image: postman/newman
-    command: run https://www.getpostman.com/collections/eaa397bd3a35ef3095c1 -e postman-pa.json --insecure --ignore-redirects
+    command: run https://www.getpostman.com/collections/eaa397bd3a35ef3095c1 -e postman_vars.json --insecure --ignore-redirects
     volumes:
         # An environment file should be injected into the image - this file should contain your specfic info and secrets
-        - ./postman-pa.json:/etc/newman/postman-pa.json
+        - ./postman_vars.json:/etc/newman/postman_vars.json
 ```
 ---
