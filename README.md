@@ -21,6 +21,8 @@ PingAccess v6 included a feature to generate KeyPairs and have them managed with
 [Documentation](https://documenter.getpostman.com/view/1239082/SWT5jLpF)
 
 ### Deployment
+[Sample Environment File](pa_add_proxy_env_sample.json)
+
 **Postman Collection**  
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/eaa397bd3a35ef3095c1)
