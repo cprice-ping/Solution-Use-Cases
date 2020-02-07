@@ -42,7 +42,11 @@ pf-config-base:
     volumes:
         # An environment file should be injected into the image - this file should contain your specfic info and secrets
         - ./pf_base_vars.json:/etc/newman/postman_vars.json
+    networks:
+      - pingnet-internal
 ```
+**Note:** The `networks` need to match something the target service is using in the stack
+
 ---
 ## PingFederate CIAM Configuration
 Server Profile: [PF-CIAM](https://github.com/cprice-ping/Profile-PF-CIAM)
@@ -72,7 +76,11 @@ pf-config-ciam:
     volumes:
         # An environment file should be injected into the image - this file should contain your specfic info and secrets
         - ./pf_ciam_vars.json:/etc/newman/postman_vars.json
+    networks:
+      - pingnet-internal
 ```
+**Note:** The `networks` need to match something the target service is using in the stack
+
 ---
 ## PingFederate CIBA Config (Requires PF-CIAM)
 Server Profile: [PF-CIAM](https://github.com/cprice-ping/Profile-PF-CIAM)
@@ -105,7 +113,11 @@ pf-config-ciba:
     volumes:
         # An environment file should be injected into the image - this file should contain your specfic info and secrets
         - ./pf_ciam_vars.json:/etc/newman/postman_vars.json
+    networks:
+      - pingnet-internal
 ```
+**Note:** The `networks` need to match something the target service is using in the stack
+
 ---
 ## PA with ACME-Managed cert for PF / PD
 Server Profile: N/A
@@ -137,5 +149,9 @@ pa-config-proxy:
     volumes:
         # An environment file should be injected into the image - this file should contain your specfic info and secrets
         - ./pa_proxy_vars.json:/etc/newman/postman_vars.json
+    networks:
+      - pingnet-internal
 ```
+**Note:** The `networks` need to match something the target service is using in the stack
+
 ---
