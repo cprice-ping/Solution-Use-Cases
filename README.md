@@ -41,13 +41,13 @@ pf-config-base:
     command: run https://www.getpostman.com/collections/2e0df14dcf26f1ddb39a -e postman_vars.json --insecure --ignore-redirects
     volumes:
         # An environment file should be injected into the image - this file should contain your specfic info and secrets
-        - ./postman_vars.json:/etc/newman/postman_vars.json
+        - ./pf_base_vars.json:/etc/newman/postman_vars.json
 ```
 ---
 ## PingFederate CIAM Configuration
 Server Profile: [PF-CIAM](https://github.com/cprice-ping/Profile-PF-CIAM)
 
-This API collection takes the PF-Base Configuration and replaces the PingID Adapter \ MFA with PingID SDK, and adds CIBA to the OIDC AS.
+This API collection takes the PF-Base Configuration and replaces the PingID Adapter \ MFA with PingID SDK.
 
 [Documentation](https://documenter.getpostman.com/view/1239082/SWLk4kLF)
 
@@ -66,12 +66,45 @@ This API collection takes the PF-Base Configuration and replaces the PingID Adap
 
 **YAML**
 ```
-pf-config-base:
+pf-config-ciam:
     image: postman/newman
     command: run https://www.getpostman.com/collections/b17a3494b4f4d54de628 -e postman_vars.json --insecure --ignore-redirects
     volumes:
         # An environment file should be injected into the image - this file should contain your specfic info and secrets
-        - ./postman_vars.json:/etc/newman/postman_vars.json
+        - ./pf_ciam_vars.json:/etc/newman/postman_vars.json
+```
+---
+## PingFederate CIBA Config (Requires PF-CIAM)
+Server Profile: [PF-CIAM](https://github.com/cprice-ping/Profile-PF-CIAM)
+
+This API collection takes the PF-CIAM Configuration and adds a CIBA configuration:
+* Email Authenticator
+* PID SDK Authenticator
+* CIBALogon OIDC Client
+
+[Documentation](https://documenter.getpostman.com/view/1239082/SWTHZEe2)
+
+### Deployment
+[Sample Environment File](pf_ciam_env_sample.json)
+
+**Postman Collection**  
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/246ba03433c2ffe26de0)
+
+**Postman Newman**  
+`newman run https://www.getpostman.com/collections/246ba03433c2ffe26de0 -e postman_vars.json --insecure --nofollow-redirects`
+
+**Newman - Docker**  
+`docker run postman/newman run https://www.getpostman.com/collections/246ba03433c2ffe26de0 -e postman_vars.json --insecure --nofollow-redirects -v ./postman_vars.json:/etc/newman/postman_vars.json`
+
+**YAML**
+```
+pf-config-ciba:
+    image: postman/newman
+    command: run https://www.getpostman.com/collections/246ba03433c2ffe26de0 -e postman_vars.json --insecure --ignore-redirects
+    volumes:
+        # An environment file should be injected into the image - this file should contain your specfic info and secrets
+        - ./pf_ciam_vars.json:/etc/newman/postman_vars.json
 ```
 ---
 ## PA with ACME-Managed cert for PF / PD
@@ -103,6 +136,6 @@ pa-config-proxy:
     command: run https://www.getpostman.com/collections/eaa397bd3a35ef3095c1 -e postman_vars.json --insecure --ignore-redirects
     volumes:
         # An environment file should be injected into the image - this file should contain your specfic info and secrets
-        - ./postman_vars.json:/etc/newman/postman_vars.json
+        - ./pa_proxy_vars.json:/etc/newman/postman_vars.json
 ```
 ---
