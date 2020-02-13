@@ -2,6 +2,7 @@
 Use Case API sets that can be layered into Ping Server Profiles
 
 This repo provides Postman collections that can be applied to Server Profile stacks, or standalone servers. They do not contain files that need to be deployed into the containers.
+
 ---
 # Use Cases
 API collections that modify Server Profiles to do other things
@@ -13,6 +14,7 @@ API collections that modify Server Profiles to do other things
 
 ## PingAccess
 * [PA Proxy for PD \ PF - ACME Certificate](#pa-with-acme-managed-cert-for-pf--pd)
+
 ---
 # Deployment
 These use cases can be deployed in several ways:
