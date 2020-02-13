@@ -7,12 +7,12 @@ This repo provides Postman collections that can be applied to Server Profile sta
 API collections that modify Server Profiles to do other things
 
 ## PingFederate
-* [PF Base Config](./Solution-Use-Cases#pingfederate-base-configuration)
+* [PF Base Config](#pingfederate-base-configuration)
 * [PF CIAM Config](#pingfederate-ciam-configuration)
-* [PF CIBA Config - [requires PF CIAM Config]](./Solution-Use-Cases#pingfederate-ciba-config-requires-pf-ciam)
+* [PF CIBA Config - [requires PF CIAM Config]](#pingfederate-ciba-config-requires-pf-ciam)
 
 ## PingAccess
-* [PA Proxy for PD \ PF - ACME Certificate](./Solution-Use-Cases#pa-with-acme-managed-cert-for-pf--pd)
+* [PA Proxy for PD \ PF - ACME Certificate](#pa-with-acme-managed-cert-for-pf--pd)
 ---
 # Deployment
 These use cases can be deployed in several ways:
