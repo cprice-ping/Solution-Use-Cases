@@ -2,7 +2,17 @@
 Use Case API sets that can be layered into Ping Server Profiles
 
 This repo provides Postman collections that can be applied to Server Profile stacks, or standalone servers. They do not contain files that need to be deployed into the containers.
+---
+# Use Cases
+API collections that modify Server Profiles to do other things
 
+## PingFederate
+* [PF Base Config](./Solution-Use-Cases#pingfederate-base-configuration)
+* [PF CIAM Config](./Solution-Use-Cases#pingfederate-ciam-configuration)
+* [PF CIBA Config - [requires PF CIAM Config]](./Solution-Use-Cases#pingfederate-ciba-config-requires-pf-ciam)
+
+## PingAccess
+* [PA Proxy for PD \ PF - ACME Certificate](./Solution-Use-Cases#pa-with-acme-managed-cert-for-pf--pd)
 ---
 # Deployment
 These use cases can be deployed in several ways:
@@ -11,9 +21,6 @@ These use cases can be deployed in several ways:
 * Compose \ K8s --> Service definition
 
 ---
-# Use Cases
-API collections that modify Server Profiles to do other things
-
 ## PingFederate Base Configuration
 Server Profile: [PF-Base](https://github.com/cprice-ping/Profile-PF-Base)
 
