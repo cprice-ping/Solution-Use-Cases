@@ -8,7 +8,7 @@ API collections that modify Server Profiles to do other things
 
 ## PingFederate
 * [PF Base Config](./Solution-Use-Cases#pingfederate-base-configuration)
-* [PF CIAM Config](./Solution-Use-Cases#pingfederate-ciam-configuration)
+* [PF CIAM Config](#pingfederate-ciam-configuration)
 * [PF CIBA Config - [requires PF CIAM Config]](./Solution-Use-Cases#pingfederate-ciba-config-requires-pf-ciam)
 
 ## PingAccess
