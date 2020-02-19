@@ -150,7 +150,7 @@ PingAccess v6 included a feature to generate KeyPairs and have them managed with
 `newman run https://www.getpostman.com/collections/eaa397bd3a35ef3095c1 -e postman_vars.json --insecure --ignore-redirects`
 
 **Newman - Docker**  
-`docker run -d postman/newman run https://www.getpostman.com/collections/eaa397bd3a35ef3095c1 -e postman_vars.json --insecure --ignore-redirects -v ./postman_vars.json:/etc/newman/postman_vars.json`
+`docker run -d postman/newman run https://www.getpostman.com/collections/eaa397bd3a35ef3095c1 -e postman_vars.json --insecure --ignore-redirects -v ./pa_add_proxy.json:/etc/newman/postman_vars.json`
 
 **YAML**
 ```
@@ -159,7 +159,7 @@ pa-config-proxy:
     command: run https://www.getpostman.com/collections/eaa397bd3a35ef3095c1 -e postman_vars.json --insecure --ignore-redirects
     volumes:
         # An environment file should be injected into the image - this file should contain your specfic info and secrets
-        - ./pa_proxy_vars.json:/etc/newman/postman_vars.json
+        - ./pa_add_proxy.json:/etc/newman/postman_vars.json
     networks:
       - pingnet-internal
 ```
