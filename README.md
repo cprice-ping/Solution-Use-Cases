@@ -180,10 +180,10 @@ This collection automates authentication events for SAML and OIDC requests. This
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/56c1cc10f3c607c6425b)
 
 **Postman Newman**  
-`newman run https://www.getpostman.com/collections/56c1cc10f3c607c6425b --env-var "pfBaseURL={{Your PingFed BaseURL}} --insecure --ignore-redirects --delay-request 500 -n 1000`
+`newman run https://www.getpostman.com/collections/56c1cc10f3c607c6425b --env-var "pfBaseURL={{Your PingFed BaseURL}} --env-var "client_id={{Your OIDC client}}" --insecure --ignore-redirects --delay-request 500 -n 1000`
 
 **Newman - Docker**  
-`docker run -d postman/newman run https://www.getpostman.com/collections/56c1cc10f3c607c6425b --env-var "pfBaseURL={{Your PingFed BaseURL}} --insecure --ignore-redirects --delay-request 500 -n 1000`
+`docker run -d postman/newman run https://www.getpostman.com/collections/56c1cc10f3c607c6425b --env-var "pfBaseURL={{Your PingFed BaseURL}} --env-var "client_id={{Your OIDC client}}" --insecure --ignore-redirects --delay-request 500 -n 1000`
 
 **YAML**
 ```
