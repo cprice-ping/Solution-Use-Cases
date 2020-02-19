@@ -185,7 +185,7 @@ This collection automates authentication events for SAML and OIDC requests. This
 
 **YAML**
 ```
-pa-config-proxy:
+pf-generate-authn:
     image: postman/newman
     command: run https://www.getpostman.com/collections/56c1cc10f3c607c6425b --env-var "pfBaseURL={{Your PingFed BaseURL}} postman_vars.json --insecure --ignore-redirects --delay-request 100 -n 1000
     networks:
