@@ -43,7 +43,7 @@ This API collection takes the vanilla PF Configuration and wires up Applications
 `newman run https://www.getpostman.com/collections/2e0df14dcf26f1ddb39a -e postman_vars.json --insecure --ignore-redirects`
 
 **Newman - Docker**  
-`docker run postman/newman run https://www.getpostman.com/collections/2e0df14dcf26f1ddb39a -e postman_vars.json --insecure --ignore-redirects -v ./postman_vars.json:/etc/newman/postman_vars.json`
+`docker run -d postman/newman run https://www.getpostman.com/collections/2e0df14dcf26f1ddb39a -e postman_vars.json --insecure --ignore-redirects -v ./postman_vars.json:/etc/newman/postman_vars.json`
 
 **YAML**
 ```
@@ -77,7 +77,7 @@ This API collection takes the PF-Base Configuration and replaces the PingID Adap
 `newman run https://www.getpostman.com/collections/b17a3494b4f4d54de628 -e postman_vars.json --insecure --ignore-redirects`
 
 **Newman - Docker**  
-`docker run postman/newman run https://www.getpostman.com/collections/b17a3494b4f4d54de628 -e postman_vars.json --insecure --ignore-redirects -v ./postman_vars.json:/etc/newman/postman_vars.json`
+`docker run -d postman/newman run https://www.getpostman.com/collections/b17a3494b4f4d54de628 -e postman_vars.json --insecure --ignore-redirects -v ./postman_vars.json:/etc/newman/postman_vars.json`
 
 **YAML**
 ```
@@ -114,7 +114,7 @@ This API collection takes the PF-CIAM Configuration and adds a CIBA configuratio
 `newman run https://www.getpostman.com/collections/246ba03433c2ffe26de0 -e postman_vars.json --insecure --ignore-redirects`
 
 **Newman - Docker**  
-`docker run postman/newman run https://www.getpostman.com/collections/246ba03433c2ffe26de0 -e postman_vars.json --insecure --ignore-redirects -v ./postman_vars.json:/etc/newman/postman_vars.json`
+`docker run -d postman/newman run https://www.getpostman.com/collections/246ba03433c2ffe26de0 -e postman_vars.json --insecure --ignore-redirects -v ./postman_vars.json:/etc/newman/postman_vars.json`
 
 **YAML**
 ```
@@ -150,7 +150,7 @@ PingAccess v6 included a feature to generate KeyPairs and have them managed with
 `newman run https://www.getpostman.com/collections/eaa397bd3a35ef3095c1 -e postman_vars.json --insecure --ignore-redirects`
 
 **Newman - Docker**  
-`docker run postman/newman run https://www.getpostman.com/collections/eaa397bd3a35ef3095c1 -e postman_vars.json --insecure --ignore-redirects -v ./postman_vars.json:/etc/newman/postman_vars.json`
+`docker run -d postman/newman run https://www.getpostman.com/collections/eaa397bd3a35ef3095c1 -e postman_vars.json --insecure --ignore-redirects -v ./postman_vars.json:/etc/newman/postman_vars.json`
 
 **YAML**
 ```
@@ -169,7 +169,9 @@ pa-config-proxy:
 ## Generate PF Audit logs for SIEM
 Server Profile: N/A
 
-This collection automates authentication events for SAML and OIDC requests. This will generate `audit.log` events that when combined with a SIEM stack can be used to demonstrate Dashboards.
+This collection automates authentication events for SAML and OIDC requests. This will generate `audit.log` events that, when combined with a SIEM stack, can be used to demonstrate Dashboards.
+
+[Documentation](https://documenter.getpostman.com/view/1239082/SzKSSzHU)
 
 ### Deployment
 
@@ -178,16 +180,16 @@ This collection automates authentication events for SAML and OIDC requests. This
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/56c1cc10f3c607c6425b)
 
 **Postman Newman**  
-`newman run https://www.getpostman.com/collections/56c1cc10f3c607c6425b --env-var "pfBaseURL={{Your PingFed BaseURL}} --insecure --ignore-redirects --delay-request 100 -n 1000`
+`newman run https://www.getpostman.com/collections/56c1cc10f3c607c6425b --env-var "pfBaseURL={{Your PingFed BaseURL}} --insecure --ignore-redirects --delay-request 500 -n 1000`
 
 **Newman - Docker**  
-`docker run postman/newman run https://www.getpostman.com/collections/56c1cc10f3c607c6425b --env-var "pfBaseURL={{Your PingFed BaseURL}} --insecure --ignore-redirects --delay-request 100 -n 1000`
+`docker run -d postman/newman run https://www.getpostman.com/collections/56c1cc10f3c607c6425b --env-var "pfBaseURL={{Your PingFed BaseURL}} --insecure --ignore-redirects --delay-request 500 -n 1000`
 
 **YAML**
 ```
 pf-generate-authn:
     image: postman/newman
-    command: run https://www.getpostman.com/collections/56c1cc10f3c607c6425b --env-var "pfBaseURL={{Your PingFed BaseURL}} postman_vars.json --insecure --ignore-redirects --delay-request 100 -n 1000
+    command: run https://www.getpostman.com/collections/56c1cc10f3c607c6425b --env-var "pfBaseURL={{Your PingFed BaseURL}} postman_vars.json --insecure --ignore-redirects --delay-request 500 -n 1000
     networks:
       - pingnet
 ```
