@@ -12,6 +12,8 @@ API collections that modify Server Profiles to do other things
 * [PF CIAM Config](#pingfederate-ciam-configuration)
 * [PF CIBA Config - [requires PF CIAM Config]](#pingfederate-ciba-config-requires-pf-ciam)
 
+* [Generate PF Audit logs for SIEM](#Generate-PF-Audit-logs-for-SIEM)
+
 ## PingAccess
 * [PA Proxy for PD \ PF - ACME Certificate](#pa-with-acme-managed-cert-for-pf--pd)
 
@@ -164,3 +166,29 @@ pa-config-proxy:
 **Note:** The `networks` need to match something the target service is using in the stack
 
 ---
+## Generate PF Audit logs for SIEM
+Server Profile: N/A
+
+This collection automates authentication events for SAML and OIDC requests. This will generate `audit.log` events that when combined with a SIEM stack can be used to demonstrate Dashboards.
+
+### Deployment
+
+**Postman Collection**  
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/56c1cc10f3c607c6425b)
+
+**Postman Newman**  
+`newman run https://www.getpostman.com/collections/56c1cc10f3c607c6425b --env-var "pfBaseURL={{Your PingFed BaseURL}} --insecure --nofollow-redirects --delay-request 100 -n 1000`
+
+**Newman - Docker**  
+`docker run postman/newman run https://www.getpostman.com/collections/56c1cc10f3c607c6425b --env-var "pfBaseURL={{Your PingFed BaseURL}} --insecure --nofollow-redirects --delay-request 100 -n 1000
+
+**YAML**
+```
+pa-config-proxy:
+    image: postman/newman
+    command: run https://www.getpostman.com/collections/56c1cc10f3c607c6425b --env-var "pfBaseURL={{Your PingFed BaseURL}} postman_vars.json --insecure --ignore-redirects --delay-request 100 -n 1000
+    networks:
+      - pingnet
+```
+**Note:** The `networks` need to match something the target service is using in the stack
