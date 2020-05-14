@@ -7,9 +7,9 @@
   * [Environment](./postman_vars.json)
 
 **Configuration**  
-This API collection takes the vanilla PF instance and adds a (slightly) stripped down version of [Workforce360](https://github.com/pingidentity/Workforce360).  
+This API collection takes a vanilla PF instance and adds a (slightly) stripped down version of [Workforce360](https://github.com/pingidentity/Workforce360).  
 
-It's based on a SimplePCV and no external datastore.
+It's based on a Simple PCV and no external datastore.
 
 **Removed Elements**
 * Software Components
@@ -20,6 +20,7 @@ It's based on a SimplePCV and no external datastore.
   * AD Datastore \ PCV \ Realm
   * PD Datastore \ PCV
   * Kerberos Adapter \ AuthN Policy branch
+---
 
 ## Deployment
 **Postman Environment**
