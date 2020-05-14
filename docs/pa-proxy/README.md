@@ -6,8 +6,8 @@ Often theres a need to have certificates that are signed by a public CA. Things 
 PingAccess v6 included a feature to generate KeyPairs and have them managed with the ACME protocol and the Let's Encrypt service. This capability makes PA a nice way to include a proxy to a configuration to enable trusted certificates in front of other services.
 
 **Pre-Requisites**
-* pingaccess instance ([PF - Simple](../pf-simple))
-* PingAccess instance \ license
+* PingFederate instance ([PF - Simple](../pf-simple))
+* PingAccess software \ license
 * Postman
   * [Environment](./postman_vars.json)
  
