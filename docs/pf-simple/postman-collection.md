@@ -13,14 +13,14 @@ The collection has a set of default variables defined - to override them, place 
 | PingFederate | `pfAdminPwd` | PingFed API Admin Password| {{globalPwd}} |
 | PingDataSync | `pdsAdminPwd`  | PingDataSync Admin Password | {{globalPwd}} |
 | All | `globalPwd` | Global Password | 2FederateM0re |
-|
 
-**Config Required - `postman_vars.json`**  
+
+**Required in `postman_vars.json`**  
 | Used By | Variable | Description | Customer Values |
 | --- | --- | --- | --- |
 | PingFederate | `pfBaseURL` | PingFed Runtime URL | https://{{your PF public FQDN}}:9031 |
 | PingFederate | `pingId` | PingID Properties  | Your PingID Properties file |
-|
+
 ---
 
 ### Postman Client  
