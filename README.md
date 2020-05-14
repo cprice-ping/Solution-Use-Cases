@@ -8,7 +8,7 @@ This repo provides Postman collections that can be applied to Server Profile sta
 API collections that modify Server Profiles to do other things
 
 ## PingFederate
-* [PF - Simple Config](docs/pf-simple/pf-simple-deploy.md)
+* [PF - Simple Config](docs/pf-simple)
 
 ## PingAccess
 * [PA Proxy - ACME Certificate](docs/pa-proxy.md)
