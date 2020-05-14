@@ -31,7 +31,7 @@ It's based on a SimplePCV and no external datastore.
 
 **Software Only**
 * Install PF server
-* Execute the [Postman Collection](#Postman-Collection)
+* Execute the [Postman Collection](./postman-collection.md)
 ---
 
 **Docker**
