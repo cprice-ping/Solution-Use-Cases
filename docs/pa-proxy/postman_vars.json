@@ -26,6 +26,16 @@
 			"key": "pingId",
 			"value": "Paste Your Properties",
 			"enabled": true
+		},
+		{
+			"key": "paVirtualHost",
+			"value": "https://demo.ping-demos.com",
+			"enabled": true
+		},
+		{
+			"key": "paAdminURL",
+			"value": "https://demo.ping-demos.com:9000",
+			"enabled": true
 		}
 	],
 	"_postman_variable_scope": "environment",
