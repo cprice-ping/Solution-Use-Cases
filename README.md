@@ -11,7 +11,8 @@ API collections that modify Server Profiles to do other things
 * [PF - Simple Config](docs/pf-simple)
 
 ## PingAccess
-* [PA Proxy - ACME Certificate](docs/pa-proxy.md)
+* [PA Proxy - ACME Certificate](docs/pa-proxy)
+* [PA WAM with PF](docs/pa-wam-with-pf)
 
 ---
 # Deployment
