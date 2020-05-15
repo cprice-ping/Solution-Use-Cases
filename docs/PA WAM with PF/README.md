@@ -1,9 +1,12 @@
-## PA with ACME-Managed cert for PF / PD
+## PA WAM with PF
 Server Profile: N/A
 
-Often theres a need to have certificates that are signed by a public CA. Things like Delegator or PingCentral use the OIDC Issuer for both backchannel calls (Metadata and token validation) and frontchannel (Application rendering and API calls). Not all products allow insecure TLS connections.   
+Frequently, we implement PingAccess as an Access Mananger using PingFed as the OIDC Token Provider. Setting this up can take a little time.
 
-PingAccess v6 included a feature to generate KeyPairs and have them managed with the ACME protocol and the Let's Encrypt service. This capability makes PA a nice way to include a proxy to a configuration to enable trusted certificates in front of other services.
+This collection will do the wiring between a PF OIDC Client (`PingAccess`) and PA, and will also add:
+* Default Web Session
+* Default Identity Mapping (JWT)
+* Sample App (https://httpbin.org/anything)
 
 **Pre-Requisites**
 * PingFederate instance ([PF - Simple](../pf-simple))
@@ -11,7 +14,7 @@ PingAccess v6 included a feature to generate KeyPairs and have them managed with
 * Postman
   * [Environment](./postman_vars.json)
  
-[Documentation](https://documenter.getpostman.com/view/1239082/SWT5jLpF)
+[Documentation](https://documenter.getpostman.com/view/1239082/Szmk1Frq)
 
 ## Deployment
 **Postman Environment**
@@ -53,7 +56,7 @@ services:
   pingconfig:
     image: pricecs/pingconfigurator:latest
     environment:
-      - COLLECTIONS=https://www.getpostman.com/collections/eaa397bd3a35ef3095c1
+      - COLLECTIONS=https://www.getpostman.com/collections/3db252f80d56599a5f46
     volumes: 
     # An environment file should be injected into the image - this file should contain your specfic info and secrets
       - ./postman_vars.json:/usr/src/app/postman_vars.json
@@ -85,7 +88,7 @@ services:
   pingconfig:
     image: pricecs/pingconfigurator:latest
     environment:
-      - COLLECTIONS=https://www.getpostman.com/collections/eaa397bd3a35ef3095c1
+      - COLLECTIONS=https://www.getpostman.com/collections/3db252f80d56599a5f46
     volumes: 
     # An environment file should be injected into the image - this file should contain your specfic info and secrets
       - ./postman_vars.json:/usr/src/app/postman_vars.json
@@ -96,3 +99,50 @@ secrets:
 ```
 * run `docker-compose up -d`
 ---
+
+**Docker Compose - PF & PA (Ping DevOps Key)**
+* Install Docker
+* Install Docker Compose
+* Configure [Ping DevOps](https://github.com/pingidentity/pingidentity-devops-getting-started/blob/master/docs/getStarted.md)
+* Create `docker-compose.yaml`
+```
+version: "3.5"
+
+services:
+  pingfederate:
+    image: pingidentity/pingfederate:latest
+    secrets:
+      - devops-secret
+    environment:
+      - PING_IDENTITY_ACCEPT_EULA=YES
+    volumes:       
+      - ./pingfederate:/opt/out/instance
+    ports:
+      - 9031:9031
+      - 9999:9999
+
+  pingaccess:
+    image: pingidentity/pingaccess:latest
+    secrets:
+      - devops-secret
+    environment:
+      - PING_IDENTITY_ACCEPT_EULA=YES
+    volumes:       
+      - ./pingaccess:/opt/out/instance
+    ports:
+      - 9031:9031
+      - 9999:9999
+
+  pingconfig:
+    image: pricecs/pingconfigurator:latest
+    environment:
+      - COLLECTIONS=https://www.getpostman.com/collections/33ce6e21b3c94585e33e,https://www.getpostman.com/collections/3db252f80d56599a5f46
+    volumes: 
+    # An environment file should be injected into the image - this file should contain your specfic info and secrets
+      - ./postman_vars.json:/usr/src/app/postman_vars.json
+
+secrets:
+  devops-secret:
+    file: ${HOME}/.pingidentity/devops
+```
+* run `docker-compose up -d`

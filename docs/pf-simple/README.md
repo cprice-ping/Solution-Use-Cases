@@ -41,6 +41,7 @@ It's based on a Simple PCV and no external datastore.
 ```
 docker run -e "PING_IDENTITY_ACCEPT_EULA=YES" -v ${PWD}/pingfederate.lic:/opt/in/instance/server/default/conf/pingfederate.lic pingidentity/pingfederate
 ```
+* Execute the [Postman Collection](./postman-collection.md)
 ---
 **Docker Compose (License file)**
 * Install Docker

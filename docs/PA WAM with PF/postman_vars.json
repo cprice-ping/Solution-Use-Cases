@@ -1,0 +1,44 @@
+{
+	"id": "1a8a3bf1-b3e9-4f41-8215-3481a7b6c91d",
+	"name": "Workforce - PF Simple",
+	"values": [
+		{
+			"key": "pfBaseURL",
+			"value": "https://demo.ping-demos.com:9031",
+			"enabled": true
+		},
+		{
+			"key": "pfAdminURL",
+			"value": "https://demo.ping-demos.com:9999",
+			"enabled": true
+		},
+		{
+			"key": "pfAdminPwd",
+			"value": "{{globalPwd}}",
+			"enabled": true
+		},
+		{
+			"key": "globalPwd",
+			"value": "2FederateM0re",
+			"enabled": true
+		},
+		{
+			"key": "pingId",
+			"value": "Paste Your Properties",
+			"enabled": true
+		},
+		{
+			"key": "paVirtualHost",
+			"value": "https://demo.ping-demos.com",
+			"enabled": true
+		},
+		{
+			"key": "paAdminURL",
+			"value": "https://demo.ping-demos.com:9000",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2020-05-13T21:32:39.474Z",
+	"_postman_exported_using": "Postman/7.24.0"
+}
