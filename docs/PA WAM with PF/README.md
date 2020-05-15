@@ -118,8 +118,8 @@ services:
       - devops-secret
     environment:
       - PING_IDENTITY_ACCEPT_EULA=YES
-    volumes:       
-      - ./pingfederate:/opt/out/instance
+#    volumes:       
+#      - ./pingfederate:/opt/out/instance
     ports:
       - 9031:9031
       - 9999:9999
@@ -130,16 +130,15 @@ services:
       - devops-secret
     environment:
       - PING_IDENTITY_ACCEPT_EULA=YES
-    volumes:       
-      - ./pingaccess:/opt/out/instance
+#    volumes:       
+#      - ./pingaccess:/opt/out/instance
     ports:
       - 443:3000
       - 9000:9000
-
   pingconfig:
     image: pricecs/pingconfigurator:latest
     environment:
-      - COLLECTIONS=https://www.getpostman.com/collections/33ce6e21b3c94585e33e,https://www.getpostman.com/collections/3db252f80d56599a5f46
+      - COLLECTIONS=https://www.getpostman.com/collections/33ce6e21b3c94585e33e,https://www.getpostman.com/collections/eaa397bd3a35ef3095c1,https://www.getpostman.com/collections/3db252f80d56599a5f46
     volumes: 
     # An environment file should be injected into the image - this file should contain your specfic info and secrets
       - ./postman_vars.json:/usr/src/app/postman_vars.json

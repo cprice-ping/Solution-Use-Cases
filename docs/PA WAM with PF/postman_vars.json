@@ -13,6 +13,11 @@
 			"enabled": true
 		},
 		{
+			"key": "pfAdmin",
+			"value": "administrator",
+			"enabled": true
+		},
+		{
 			"key": "pfAdminPwd",
 			"value": "{{globalPwd}}",
 			"enabled": true
@@ -24,12 +29,12 @@
 		},
 		{
 			"key": "pingId",
-			"value": "Paste Your Properties",
+			"value": "Paste Your Properties -- Single Line with /n",
 			"enabled": true
 		},
 		{
 			"key": "paVirtualHost",
-			"value": "https://demo.ping-demos.com",
+			"value": "demo.ping-demos.com",
 			"enabled": true
 		},
 		{
