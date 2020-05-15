@@ -32,6 +32,8 @@ It's based on a Simple PCV and no external datastore.
 
 **Software Only**
 * Install PF server
+  * Place `pingfederate.lic` file into `/pingfederate/server/default/conf`
+* Start PingFederate
 * Execute the [Postman Collection](./postman-collection.md)
 ---
 

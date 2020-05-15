@@ -11,7 +11,9 @@ PingAccess v6 included a feature to generate KeyPairs and have them managed with
 * Postman
   * [Environment](./postman_vars.json)
  
-[Documentation](https://documenter.getpostman.com/view/1239082/SWT5jLpF)
+**Postman Collection**
+ * [Documentation](https://documenter.getpostman.com/view/1239082/SWT5jLpF)
+---
 
 ## Deployment
 **Postman Environment**
@@ -79,8 +81,8 @@ services:
     volumes:       
       - ./pingaccess:/opt/out/instance
     ports:
-      - 9031:9031
-      - 9999:9999
+      - 443:3000
+      - 9000:9000
 
   pingconfig:
     image: pricecs/pingconfigurator:latest

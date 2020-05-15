@@ -13,8 +13,11 @@ This collection will do the wiring between a PF OIDC Client (`PingAccess`) and P
 * PingAccess software \ license
 * Postman
   * [Environment](./postman_vars.json)
+* [Use Case: PA as a Proxy](../pa-proxy)
  
-[Documentation](https://documenter.getpostman.com/view/1239082/Szmk1Frq)
+**Postman Collection** 
+* [Documentation](https://documenter.getpostman.com/view/1239082/Szmk1Frq)
+---
 
 ## Deployment
 **Postman Environment**
@@ -130,8 +133,8 @@ services:
     volumes:       
       - ./pingaccess:/opt/out/instance
     ports:
-      - 9031:9031
-      - 9999:9999
+      - 443:3000
+      - 9000:9000
 
   pingconfig:
     image: pricecs/pingconfigurator:latest
